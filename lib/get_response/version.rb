@@ -1,3 +1,3 @@
-module GetresponseRuby
+module GetResponse
   VERSION = "0.1.0"
 end

@@ -1,0 +1,2 @@
+module GetResponseRuby
+end

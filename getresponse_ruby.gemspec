@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'getresponse_ruby/version'
+require 'get_response/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "getresponse_ruby"
-  spec.version       = GetresponseRuby::VERSION
+  spec.version       = GetResponse::VERSION
   spec.authors       = ["Faizal Zakaria"]
   spec.email         = ["phaibusiness@gmail.com"]
 
@@ -33,4 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry", '~> 0.10.4'
+  spec.add_runtime_dependency 'json', '~> 1.8.6'
+  spec.add_runtime_dependency 'faraday', '~> 0.9.2'
 end

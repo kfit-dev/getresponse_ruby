@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "getresponse_ruby"
+require "get_response"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
