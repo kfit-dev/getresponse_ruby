@@ -1,6 +1,7 @@
-require "get_response/version"
 require 'faraday'
+require "get_response/version"
 require "get_response/base"
+require "get_response/response"
 require "get_response/contacts"
 
 module GetResponse

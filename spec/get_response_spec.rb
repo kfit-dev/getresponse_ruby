@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe GetResponse do
+RSpec.describe GetResponse, :vcr do
   it { expect(GetResponse::VERSION).not_to be nil }
   let(:email) { 'email@example.com' }
 
@@ -10,6 +10,9 @@ RSpec.describe GetResponse do
   end
 
   describe '.contacts' do
+    before do
+      GetResponse.configure { |config| config.api_key = 'ae3aff891998babfeb4e6919136bf850' }
+    end
     describe '.post' do
       let(:params) do
         {
@@ -31,7 +34,8 @@ RSpec.describe GetResponse do
         }
       end
 
-      it { expect(GetResponse::Api.contacts.post(params)).not_to be nil }
+      subject { GetResponse::Api.contacts.post(params) }
+      it { expect(subject.success?).to be true }
     end
 
     describe '.get' do

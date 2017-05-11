@@ -1,16 +1,17 @@
 module GetResponse
   class Base
-    API_ENDPOINT = 'https://api.getresponse.com/v3'
+    API_ENDPOINT = 'https://api.getresponse.com'
 
     def headers
       {
         'User-Agent'    => 'GetResponse Ruby SDK',
-        'Content-Type'  => 'application/json'
+        'Content-Type'  => 'application/json',
+        'X-Auth-Token'  => "api-key #{GetResponse.config.api_key}"
       }
     end
 
     [:post, :get].each do |method|
-      define_method "#{method}_call" do |action, params, headers|
+      define_method "#{method}_call" do |action, params|
         connection.send("#{method}") do |req|
           req.url action
           req.params = params

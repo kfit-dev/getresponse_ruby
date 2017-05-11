@@ -1,14 +1,16 @@
 module GetResponse
   class Contacts < Base
 
-    ACTION = '/contacts'
+    ACTION = '/v3/contacts'
 
     def post(params)
-      post_call(ACTION, params, headers)
+      response = post_call(ACTION, params)
+      Response.new(response)
     end
 
     def get(params)
-      get_call(ACTION, params, headers)
+      response = get_call(ACTION, params)
+      Response.new(response)
     end
   end
 end
