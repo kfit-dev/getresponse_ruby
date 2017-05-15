@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.getresponse.com/v3/contacts?campaign%5BcampaignId%5D=jeqeq1&customFieldValues%5BcustomFieldId%5D=n&customFieldValues%5Bvalue%5D%5B0%5D=white&dayOfCycle=10&email=email@example.com&ipAddress=89.206.36.193&name=First%2BName
+    uri: https://api3.getresponse360.pl/v3/contacts?campaign%5BcampaignId%5D=jeqeq1&customFieldValues%5BcustomFieldId%5D=n&customFieldValues%5Bvalue%5D%5B0%5D=white&dayOfCycle=10&email=email@example.com&ipAddress=89.206.36.193&name=First%2BName
     body:
       encoding: UTF-8
       string: ''
@@ -13,6 +13,8 @@ http_interactions:
       - application/json
       X-Auth-Token:
       - api-key ae3aff891998babfeb4e6919136bf850
+      X-Domain:
+      - myfave.getresponse360.com
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -21,31 +23,22 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 301
+      message: Moved Permanently
     headers:
       Server:
       - nginx
       Date:
-      - Thu, 11 May 2017 10:24:03 GMT
+      - Mon, 15 May 2017 16:29:33 GMT
       Content-Type:
-      - application/json;charset=utf-8
+      - text/html; charset=UTF-8
       Transfer-Encoding:
       - chunked
+      Location:
+      - http://www.getresponse.com/enterprise
     body:
       encoding: UTF-8
-      string: |-
-        {
-            "httpStatus": 401,
-            "code": 1014,
-            "codeDescription": "Problem during authentication process, check headers!",
-            "message": "Unable to authenticate request. Check credentials or authentication method details",
-            "moreInfo": "https://apidocs.getresponse.com/en/v3/errors/1014",
-            "context": {
-                "authenticationType": "auth_token"
-            },
-            "uuid": "3d88fc1d-02c9-4e31-8824-3871d8881140"
-        }
+      string: ''
     http_version: 
-  recorded_at: Thu, 11 May 2017 10:24:03 GMT
+  recorded_at: Mon, 15 May 2017 16:29:32 GMT
 recorded_with: VCR 3.0.3

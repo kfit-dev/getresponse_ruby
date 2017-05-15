@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api3.getresponse360.com/v3/campaigns
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - GetResponse Ruby SDK
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - api-key ae3aff891998babfeb4e6919136bf850
+      X-Domain:
+      - myfave.getresponse360.com
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 15 May 2017 16:42:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Totalcount:
+      - '3'
+      Totalpages:
+      - '1'
+      Currentpage:
+      - '1'
+      X-Ratelimit-Limit:
+      - '30000'
+      X-Ratelimit-Remaining:
+      - '29997'
+      X-Ratelimit-Reset:
+      - 563 seconds
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        [
+            {
+                "campaignId": "A",
+                "href": "https://api3.getresponse360.com/v3/campaigns/A",
+                "name": "myfave",
+                "description": "myfave",
+                "languageCode": "EN",
+                "isDefault": "true",
+                "createdOn": "2017-05-04T08:36:36+0000"
+            },
+            {
+                "campaignId": "3",
+                "href": "https://api3.getresponse360.com/v3/campaigns/3",
+                "name": "myfave_sg",
+                "description": "myfave_sg",
+                "languageCode": "EN",
+                "isDefault": "false",
+                "createdOn": "2017-05-13T05:15:41+0000"
+            },
+            {
+                "campaignId": "x",
+                "href": "https://api3.getresponse360.com/v3/campaigns/x",
+                "name": "myfave_id",
+                "description": "myfave_id",
+                "languageCode": "EN",
+                "isDefault": "false",
+                "createdOn": "2017-05-15T15:28:49+0000"
+            }
+        ]
+    http_version: 
+  recorded_at: Mon, 15 May 2017 16:42:58 GMT
+recorded_with: VCR 3.0.3

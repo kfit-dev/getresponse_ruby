@@ -1,14 +1,6 @@
 module GetResponse
   class Base
-    API_ENDPOINT = 'https://api.getresponse.com'
-
-    def headers
-      {
-        'User-Agent'    => 'GetResponse Ruby SDK',
-        'Content-Type'  => 'application/json',
-        'X-Auth-Token'  => "api-key #{GetResponse.config.api_key}"
-      }
-    end
+    API_ENDPOINT = 'https://api3.getresponse360.com'
 
     [:post, :get].each do |method|
       define_method "#{method}_call" do |action, params|
@@ -30,7 +22,32 @@ module GetResponse
     end
 
     def api_endpoint
-      API_ENDPOINT
+      GetResponse.config.api_endpoint || API_ENDPOINT
+    end
+
+    def headers
+      user_agent_header
+        .merge(json_header)
+        .merge(auth_header)
+        .merge(domain_header)
+    end
+
+    def user_agent_header
+      { 'User-Agent' => 'GetResponse Ruby SDK' }
+    end
+
+    def json_header
+      { 'Content-Type' => 'application/json' }
+    end
+
+    def auth_header
+      return {} unless GetResponse.config.api_key
+      { 'X-Auth-Token' => "api-key #{GetResponse.config.api_key}" }
+    end
+
+    def domain_header
+      return {} unless GetResponse.config.domain_header
+      { 'X-Domain' => GetResponse.config.domain_header }
     end
 
     def logging(msg)
