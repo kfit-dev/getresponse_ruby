@@ -18,13 +18,24 @@ Or install it yourself as:
 
 ## Usage
 
+### To configure
+
+```ruby
+GetResponse.configure do |config|
+  config.api_key = 'api key'
+  config.api_endpoint = 'http://ello.malaysia.com'
+end
+```
+
+### To use it
+
 ```ruby
 # Get contacts
-GetResponse.contacts.get
+api = GetResponse::Api.new
 # Crate contact
-GetResponse.contacts.post(params)
+api.contacts.create(params)
 # Get campaigns
-GetResponse.campaigns.get
+api.campaigns.retrieve
 ```
 
 ## Development
@@ -35,8 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/faizalzakaria/getresponse_ruby.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/kfit-dev/getresponse_ruby.
 
 ## License
 
