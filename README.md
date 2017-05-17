@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'getresponse_ruby'
+gem 'get_response'
 ```
 
 And then execute:
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install getresponse_ruby
+    $ gem install get_response
 
 ## Usage
 
