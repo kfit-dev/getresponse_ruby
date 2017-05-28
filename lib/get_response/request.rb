@@ -27,7 +27,12 @@ module GetResponse
         @connection ||= Faraday.new(url: api_endpoint) do |faraday|
           faraday.request :url_encoded
           faraday.adapter Faraday.default_adapter
+          faraday.response :logger, GetResponse.config.logger if verbose?
         end
+      end
+
+      def verbose?
+        GetResponse.config.verbose
       end
 
       def api_endpoint
