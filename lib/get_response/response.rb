@@ -13,5 +13,13 @@ module GetResponse
     def success?
       [200, 201, 202].include? @response.status
     end
+
+    def rate_limitted?
+      @response.status == 429
+    end
+
+    def rate_limit_reset_time
+      @response.headers['x-ratelimit-reset']&.to_i
+    end
   end
 end
