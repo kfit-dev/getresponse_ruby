@@ -32,7 +32,7 @@ RSpec.describe GetResponse::Api do
   describe 'limitted requests' do
     let(:result) { api.products.create({}) }
     it { expect(result.success?).to be false }
-    it { expect(result.rate_limitted?).to be true }
+    it { expect(result.rate_limited?).to be true }
     it { expect(result.rate_limit_reset_time).to eq 600 }
   end
 end
