@@ -14,7 +14,7 @@ module GetResponse
       [200, 201, 202].include? @response.status
     end
 
-    def rate_limitted?
+    def rate_limited?
       @response.status == 429
     end
 
