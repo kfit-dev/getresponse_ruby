@@ -1,3 +1,6 @@
+# This repo is archived!
+We are no longer using GetResponse. Refer to request in https://github.com/kfit-dev/site-reliability/issues/186
+
 # GetresponseRuby
 
 ## Installation
